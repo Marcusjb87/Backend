@@ -1,6 +1,6 @@
-const { promises: fs } = require('fs')
+import fs from 'fs/promises'
 
-class Product { 
+export class Product { 
     constructor({id, title, description, price, thumbnail, code, stock}) {
         this.id = id
         this.title = title
@@ -12,7 +12,7 @@ class Product {
     }
 }
 
-class ProductManager {
+export class ProductManager {
     static proxIdProduct = 1
     products
     constructor({path}) {
@@ -37,9 +37,12 @@ class ProductManager {
     }
 
     async addProduct(propiedades) {
+        if (this.products.length !== 0) {
+            await writeProducts();
+        }
         const idProduct = ProductManager.getIdParaNuevoProduct()
         const product = new Product({ id: idProduct, ...propiedades })
-        const codigoExistente = product.code
+        const codigoExistente = this.products.find((prod) => prod.code === product.code)
         if (codigoExistente) {
             throw new Error("Código ya existente. Por favor, introducir un nuevo código")
         }    
@@ -92,11 +95,11 @@ async function main() {
     const prod1 = await pm.addProduct({
     id: 1,
     title: 'CPU',
-    description: 'AMD Brand',
-    price: 21,
-    thumbnail: 'No Img Yet',
-    code: 'R7',
-    stock: 17
+    description: 'AMD Ryzen 5',
+    price: 500,
+    thumbnail: 'No IMG Yet',
+    code: 'CR5',
+    stock: 15
     })
 
     console.log(prod1)

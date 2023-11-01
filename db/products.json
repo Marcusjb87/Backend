@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "CPU",
+        "description": "AMD Ryzen 5",
+        "price": 500,
+        "thumbnail": "no IMG yet",
+        "code": "CR5",
+        "stock": 15
+    },
+    {
+        "id": 2,
+        "title": "CPU",
+        "description": "Intel Core i3",
+        "price": 400,
+        "thumbnail": "no IMG yet",
+        "code": "CI3",
+        "stock": 13
+    },
+    {
+        "id": 3,
+        "title": "CPU",
+        "description": "AMD Ryzen 7",
+        "price": 700,
+        "thumbnail": "no IMG yet",
+        "code": "CR7",
+        "stock": 14
+    }
+]
