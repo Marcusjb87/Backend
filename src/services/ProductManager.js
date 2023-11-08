@@ -1,16 +1,5 @@
 import fs from 'fs/promises'
-
-export class Product { 
-    constructor({id, title, description, price, thumbnail, code, stock}) {
-        this.id = id
-        this.title = title
-        this.description = description
-        this.price = price
-        this.thumbnail = thumbnail
-        this.code = code
-        this.stock = stock
-    }
-}
+import { Product } from '../models/Product.js'
 
 export class ProductManager {
     static proxIdProduct = 1
@@ -86,25 +75,3 @@ export class ProductManager {
         }
     }
 }
-
-//Pruebas
-async function main() {
-
-    const pm = new ProductManager({path: 'products.json'})
-
-    const prod1 = await pm.addProduct({
-    id: 1,
-    title: 'CPU',
-    description: 'AMD Ryzen 5',
-    price: 500,
-    thumbnail: 'No IMG Yet',
-    code: 'CR5',
-    stock: 15
-    })
-
-    console.log(prod1)
-
-    console.log(await pm.getProducts())
-}
-
-main()
