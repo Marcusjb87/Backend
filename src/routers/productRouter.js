@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { ProductManager } from "../services/ProductManager.js";
+import { Router } from "express"
+import { ProductManager } from "../services/ProductManager.js"
 
-const productManager = new ProductManager({ path: '.../db/productos.json' })
+export const productManager = new ProductManager ({ path: '.../db/productos.json' })
 
 export const productRouter = Router()
 

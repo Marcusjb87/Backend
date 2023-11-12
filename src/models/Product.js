@@ -9,6 +9,5 @@ export class Product {
         this.stock = stock
         this.status = true
         this.category = category
-
     }
 }
