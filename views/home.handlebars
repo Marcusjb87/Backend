@@ -1,0 +1,14 @@
+<section class="products">
+  <h1>Lista de Productos</h1>
+  {{#if hayProducts}}
+  <ul>
+    {{#each products}}
+    <li>
+        {{this.id}} {{this.title}} {{this.description}} {{this.price}} {{this.thumbnail}} {{this.code}} {{this.stock}} {{this.status}} {{this.category}}
+    </li>
+    {{/each}}
+  </ul>
+  {{else}}
+  Aún no hay productos cargados.
+  {{/if}}
+</section>
